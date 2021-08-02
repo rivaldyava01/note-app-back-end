@@ -12,3 +12,10 @@ $path = ".\note-api-webserver.pem"
 icacls.exe $path /reset
 icacls.exe $path /GRANT:R "$((Get-Acl -Path $path).Owner):(R)"
 icacls.exe $path /inheritance:r
+
+start:
+ssh -i "note-api-webserver.pem" ubuntu@ec2-18-141-204-62.ap-southeast-1.compute.amazonaws.com
+
+stop:
+exit
+
